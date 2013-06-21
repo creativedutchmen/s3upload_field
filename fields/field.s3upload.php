@@ -320,7 +320,7 @@ class FieldS3Upload extends FieldUpload {
 			return self::__INVALID_FIELDS__;	
 		}
 
-		if(empty($data) || $data['error'] == UPLOAD_ERR_NO_FILE) {
+		if(empty($data) || (isset($data['error']) && $data['error'] == UPLOAD_ERR_NO_FILE)) {
 
 
 			if($this->get('required') == 'yes'){
